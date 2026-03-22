@@ -20,7 +20,7 @@ const Navbar = () => {
         </Show>
         <Show when={"signed-out"}>
           <SignInButton>
-            <Button className="btn">Sign In</Button>
+            <button className="btn-signin">Sign In</button>
           </SignInButton>
         </Show>
       </div>
