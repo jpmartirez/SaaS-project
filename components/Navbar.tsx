@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Navitems from "./Navitems";
-import { SignInButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,14 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center gap-8">
         <Navitems />
+        <Show when={"signed-in"}>
+          <UserButton />
+        </Show>
+        <Show when={"signed-out"}>
+          <SignInButton>
+            <Button className="btn">Sign In</Button>
+          </SignInButton>
+        </Show>
       </div>
     </nav>
   );
